@@ -11,7 +11,7 @@ const initialForm = {
 };
 
 
-const App = () => {
+const FormView = () => {
   const [step, setStep] = useState(1)
   const [form, setForm] = useState(initialForm)
 
@@ -21,9 +21,17 @@ const App = () => {
   };
 
   const _saveForm = () => {
-    localStorage.setItem('myForm', JSON.stringify({
-      [uuidv4()]: form,
-    }));
+    const dataInLocalStorage = localStorage.getItem('myForm');
+
+    if (dataInLocalStorage) {
+      const clients = JSON.parse(dataInLocalStorage);
+
+      localStorage.setItem('myForm', JSON.stringify({...clients, [uuidv4()]: form}));
+    } else {
+      localStorage.setItem('myForm', JSON.stringify({
+        [uuidv4()]: form,
+      }));
+    }
 
     _resetForm();
   };
@@ -53,4 +61,4 @@ const App = () => {
   }
 };
 
-export default App;
+export default FormView;

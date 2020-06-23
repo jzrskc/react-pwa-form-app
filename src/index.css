@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: #f5f5f5;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 2px;
+  cursor: default;
+}
+
+.panel-heading h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.panel-heading h5 {
+  width: 40%;
+}

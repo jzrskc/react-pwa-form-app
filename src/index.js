@@ -1,18 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+// import { createBrowserHistory } from 'history';
 
-import App from './container/App';
+import FormView from './container/FormView';
+import HomeView from './container/HomeView';
 import './index.css';
 
 import * as serviceWorker from './serviceWorker';
 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+  // const history = createBrowserHistory();
+
+  return (
+    <BrowserRouter>
+      <Route exact path="/" component={HomeView} />
+      <Route exact path="/form" component={FormView} />
+    </BrowserRouter>
+  );
+};
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 
 serviceWorker.register();
