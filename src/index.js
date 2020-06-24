@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import FormView from './container/FormView';
 import HomeView from './container/HomeView';
-import './index.css';
+import './assets/css/index.css';
 
 import * as serviceWorker from './serviceWorker';
 
