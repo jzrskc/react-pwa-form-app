@@ -6,7 +6,6 @@ const First = ({ updateForm }) => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
     updateForm(data, 'first');
   };
 
@@ -20,14 +19,14 @@ const First = ({ updateForm }) => {
           defaultValue={'John'}
           placeholder="firstName"
           name="firstName"
-          ref={register}
+          ref={register({ required: true })}
         />
         <input
           type="text"
           defaultValue={'Doe'}
           placeholder="lastName"
           name="lastName"
-          ref={register}
+          ref={register({ required: true })}
         />
 
         <input type="submit" />

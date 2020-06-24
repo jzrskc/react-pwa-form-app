@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { withRouter } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import First from './First'
@@ -11,7 +12,7 @@ const initialForm = {
 };
 
 
-const FormView = () => {
+const FormView = ({ history }) => {
   const [step, setStep] = useState(1)
   const [form, setForm] = useState(initialForm)
 
@@ -34,6 +35,7 @@ const FormView = () => {
     }
 
     _resetForm();
+    history.push("/");
   };
 
   const _resetForm = () => {
@@ -61,4 +63,4 @@ const FormView = () => {
   }
 };
 
-export default FormView;
+export default withRouter(FormView);
